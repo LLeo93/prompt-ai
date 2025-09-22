@@ -2,7 +2,7 @@ import './App.css';
 import './index.css';
 import React, { useState } from 'react';
 import AnimatedBackground from './components/AnimatedBackground';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PromptForm from './features/prompts/PromptForm';
 import PromptList from './features/prompts/PromptList';
 import AnimatedComponent from './components/AnimatedComponent';

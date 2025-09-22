@@ -10,7 +10,6 @@ import Swal from 'sweetalert2';
 import type { SweetAlertResult } from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import Button from '../../components/Buttons/Button';
-import CopyButton from '../../components/Buttons/CopyButton';
 
 const MySwal = withReactContent(Swal);
 

@@ -4,7 +4,6 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState } from '../app/store';
 import { removePrompt, toggleFavorite } from '../features/prompts/promptsSlice';
-import { motion } from 'framer-motion';
 import AnimatedComponent from './AnimatedComponent';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 import Swal from 'sweetalert2';

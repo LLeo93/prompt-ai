@@ -4,7 +4,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState } from '../app/store';
 import { updatePrompt } from '../features/prompts/promptsSlice';
-import { motion } from 'framer-motion';
 import AnimatedComponent from './AnimatedComponent';
 import Tooltip from './Tooltip';
 import Swal from 'sweetalert2';
