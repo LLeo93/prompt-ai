@@ -32,7 +32,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({
           timer: 1500,
         });
       })
-      .catch((err) => {
+      .catch((_err) => {
         MySwal.fire({
           icon: 'error',
           title: 'Errore',

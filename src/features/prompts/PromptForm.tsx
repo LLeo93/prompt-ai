@@ -1,4 +1,3 @@
-// src/components/PromptForm.tsx
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addPrompt } from '../prompts/promptsSlice';
@@ -8,7 +7,6 @@ import AnimatedComponent from '../../components/AnimatedComponent';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import Button from '../../components/Buttons/Button';
-import { loadPrompts } from '../prompts/promptsSlice';
 
 const MySwal = withReactContent(Swal);
 
@@ -16,39 +14,7 @@ const PromptForm: React.FC = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const dispatch = useDispatch();
-  const handleImport = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
 
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      try {
-        const importedPrompts = JSON.parse(event.target?.result as string);
-        if (
-          Array.isArray(importedPrompts) &&
-          importedPrompts.every((p) => p.id && p.title && p.content)
-        ) {
-          dispatch(loadPrompts(importedPrompts));
-          MySwal.fire({
-            icon: 'success',
-            title: 'Importazione completata!',
-            text: `${importedPrompts.length} prompt sono stati importati.`,
-            timer: 2000,
-            showConfirmButton: false,
-          });
-        } else {
-          throw new Error('Formato JSON non valido.');
-        }
-      } catch (error) {
-        MySwal.fire({
-          icon: 'error',
-          title: 'Errore di importazione',
-          text: 'Il file selezionato non è un formato valido per i prompt.',
-        });
-      }
-    };
-    reader.readAsText(file);
-  };
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!title || !content) {

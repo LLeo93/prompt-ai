@@ -1,6 +1,6 @@
 import './App.css';
 import './index.css';
-import React, { useState } from 'react';
+import React from 'react';
 import AnimatedBackground from './components/AnimatedBackground';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PromptForm from './features/prompts/PromptForm';
