@@ -75,19 +75,17 @@ Supporto multi-lingua per i prompt.
 Versionamento dei prompt e cronologia modifiche.
 
 
-🔗 Contatti & Portfolio
-Vuoi vedere altri miei progetti o collaborare?
-Visita il mio portfolio per scoprire cosa sto costruendo!
+📱 Contatti
 
-<img src="https://i.ibb.co/L5hYfT3/web-dev-icon.png" width="16" height="16"> Portfolio: https://portfolio-psi-lilac-74.vercel.app/
+Telefono: +39 3806952354
 
-<img src="https://www.google.com/search?q=https://i.ibb.co/dK5rP9Y/github-icon.png" width="16" height="16"> GitHub: https://github.com/LLeo93
+Talent Platform: https://talent.epicode.com/talent/c3eadc8b-624e-4c99-9ac0-7b6d102f28b2
 
-<img src="https://i.ibb.co/3s88V5D/mail-icon.png" width="16" height="16"> Email: liba.leoncini@gmail.com
+Portfolio https://portfolio-psi-lilac-74.vercel.app/
 
-<img src="https://i.ibb.co/XjY05Fw/epicode-icon.png" width="16" height="16"> Talent Platform: https://talent.epicode.com/talent/c3eadc8b-624e-4c99-9ac0-7b6d102f28b2
+GitHub: https://github.com/LLeo93
 
-<img src="https://i.ibb.co/Lg58Yp9/phone-icon.png" width="16" height="16"> Telefono: +39 3806952354
+Email: liba.leoncini@gmail.com
 
 Grazie per aver visitato il progetto! 🌟
 ```
