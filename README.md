@@ -39,7 +39,7 @@ Assicurati di avere installato Node.js e npm.
 
 1. Clona il progetto:
 
-```bash
+bash
 
 git clone <link-del-tuo-repo>
 cd prompt-ai
@@ -77,15 +77,18 @@ Versionamento dei prompt e cronologia modifiche.
 
 📱 Contatti
 
-Telefono: +39 3806952354
+🌐 Portfolio https://portfolio-psi-lilac-74.vercel.app/
 
-Talent Platform: https://talent.epicode.com/talent/c3eadc8b-624e-4c99-9ac0-7b6d102f28b2
+💻 GitHub: https://github.com/LLeo93
 
-Portfolio https://portfolio-psi-lilac-74.vercel.app/
+💼 Linkedin: https://www.linkedin.com/in/libanio-leoncini/
 
-GitHub: https://github.com/LLeo93
+✉️ Email: liba.leoncini@gmail.com
 
-Email: liba.leoncini@gmail.com
+🎓 Talent Platform: https://talent.epicode.com/talent/c3eadc8b-624e-4c99-9ac0-7b6d102f28b2
+
+📞 Telefono: +39 3806952354
+
 
 Grazie per aver visitato il progetto! 🌟
-```
+
