@@ -58,8 +58,8 @@ L’applicazione sarà disponibile su http://localhost:5173
 
 🌐 Deploy
 
-Il progetto è pronto per essere deployato su Vercel.
-Link al progetto live: https://tuo-progetto.vercel.app
+
+Link al progetto live:https://prompt-ai-orpin.vercel.app/
 
 
 💡 Funzioni future
