@@ -46,6 +46,9 @@ export const promptsSlice = createSlice({
     loadPrompts: (state, action: PayloadAction<Prompt[]>) => {
       state.prompts = action.payload;
     },
+    clearPrompts: (state) => {
+      state.prompts = [];
+    },
   },
 });
 
@@ -55,6 +58,7 @@ export const {
   updatePrompt,
   toggleFavorite,
   loadPrompts,
+  clearPrompts,
 } = promptsSlice.actions;
 
 export default promptsSlice.reducer;
