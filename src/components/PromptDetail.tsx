@@ -1,4 +1,3 @@
-// src/components/PromptDetail.tsx
 import React from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -14,6 +13,7 @@ import Button from './Buttons/Button';
 import CopyButton from './Buttons/CopyButton';
 
 const MySwal = withReactContent(Swal);
+
 const PromptDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -83,10 +83,25 @@ const PromptDetail: React.FC = () => {
       <h2 className="text-4xl font-bold text-cyan-300 mb-4 break-words">
         {prompt.title}
       </h2>
-      <p className="text-gray-400 whitespace-pre-wrap leading-relaxed break-words mb-2">
+      <p className="text-gray-400 whitespace-pre-wrap leading-relaxed break-words mb-4">
         {prompt.content}
       </p>
-      <div className="flex gap-2 items-center">
+
+      {/* Tags */}
+      {prompt.tags && prompt.tags.length > 0 && (
+        <div className="flex flex-wrap gap-2 mb-4">
+          {prompt.tags.map((tag, i) => (
+            <span
+              key={i}
+              className="px-2 py-1 text-sm bg-cyan-700/30 text-cyan-300 rounded-lg"
+            >
+              #{tag}
+            </span>
+          ))}
+        </div>
+      )}
+
+      <div className="flex gap-2 items-center mb-4">
         <span className="text-sm text-gray-500">
           Creato il: {new Date(prompt.createdAt).toLocaleDateString()}
         </span>
@@ -106,6 +121,7 @@ const PromptDetail: React.FC = () => {
           </button>
         </Tooltip>
       </div>
+
       <div className="mt-8 flex justify-center items-center gap-2 flex-col md:flex-row">
         <CopyButton
           textToCopy={prompt.content}
