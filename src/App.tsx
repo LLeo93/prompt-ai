@@ -107,7 +107,6 @@ function App() {
                     accept=".json"
                     className="hidden"
                   />
-                  
                 </AnimatedComponent>
               }
             />

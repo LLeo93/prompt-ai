@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState } from '../../app/store';
 import { removePrompt, toggleFavorite } from '../prompts/promptsSlice';
@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
 import type { SweetAlertResult } from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import Button from '../../components/Buttons/Button';
+import ClearStorageButton from '../../components/Buttons/ClearStorageButton';
 
 const MySwal = withReactContent(Swal);
 
@@ -59,19 +60,39 @@ const PromptList: React.FC = () => {
     });
   };
 
+  const [search, setSearch] = useState('');
+
+  const filteredPrompts = prompts.filter((p) => {
+    const query = search.toLowerCase();
+    return (
+      p.title.toLowerCase().includes(query) ||
+      p.content.toLowerCase().includes(query) ||
+      (p.tags && p.tags.some((tag) => tag.toLowerCase().includes(query)))
+    );
+  });
+
   return (
     <div className="mt-8 flex flex-col">
-      <h2 className="text-2xl font-bold text-gray-200 mb-4 col-12">
-        I tuoi Prompt
-      </h2>
-      {prompts.length === 0 ? (
+      <div className="mb-4 flex flex-col md:flex-row md:justify-between md:items-center gap-2">
+        <h2 className="text-2xl font-bold text-gray-200">I tuoi Prompt</h2>
+        <input
+          type="text"
+          placeholder="🔍 Cerca prompt..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="px-3 py-2 rounded-lg bg-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 border border-slate-600 w-full md:w-1/3"
+        />
+        <ClearStorageButton />
+      </div>
+
+      {filteredPrompts.length === 0 ? (
         <p className="text-gray-400 italic col-12">
-          Nessun prompt salvato. Inizia ad aggiungerne uno!
+          Nessun prompt trovato. Inizia ad aggiungerne uno!
         </p>
       ) : (
         <AnimatePresence>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {prompts.map((prompt) => (
+            {filteredPrompts.map((prompt) => (
               <motion.div
                 key={prompt.id}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -88,6 +109,20 @@ const PromptList: React.FC = () => {
                     {prompt.content}
                   </p>
                 </Link>
+
+                {prompt.tags && prompt.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {prompt.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="px-2 py-1 text-xs bg-cyan-700/30 text-cyan-300 rounded-lg"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
                 <div className="flex flex-col justify-end mt-4 gap-2">
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-500">
@@ -117,7 +152,7 @@ const PromptList: React.FC = () => {
                     </Tooltip>
                   </div>
                   <div className="flex justify-center items-center gap-2">
-                    <Tooltip text="Visualizza Propt">
+                    <Tooltip text="Visualizza Prompt">
                       <Link to={`/prompt/${prompt.id}`}>
                         <Button variant="view" size="sm">
                           Visualizza

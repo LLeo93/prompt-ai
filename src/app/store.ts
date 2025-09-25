@@ -1,4 +1,3 @@
-// src/app/store.ts
 import { configureStore } from '@reduxjs/toolkit';
 import promptsReducer from '../features/prompts/promptsSlice';
 

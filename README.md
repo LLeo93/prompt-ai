@@ -30,6 +30,8 @@ L’interfaccia è intuitiva e responsive: puoi generare prompt, salvarli tra i 
 - Interfaccia responsive, adatta a desktop e mobile.
 - Animazioni interattive con **Framer Motion**.
 - Notifiche e conferme con **SweetAlert2**.
+- Ricerca e filtro tra i prompt salvati (ora funzionante).
+- Organizzazione dei prompt tramite categorie o tag (ora funzionante).
 
 ---
 
@@ -64,15 +66,9 @@ Link al progetto live: https://tuo-progetto.vercel.app
 
 💡 Funzioni future
 
-Ricerca e filtro tra i prompt salvati.
-
-Categorie o tag per organizzare i prompt.
-
-Autenticazione utenti per salvare i preferiti su cloud.
-
-Supporto multi-lingua per i prompt.
-
-Versionamento dei prompt e cronologia modifiche.
+- Autenticazione utenti per salvare i preferiti su cloud.
+- Supporto multi-lingua per i prompt.
+- Versionamento dei prompt e cronologia modifiche.
 
 
 📱 Contatti
