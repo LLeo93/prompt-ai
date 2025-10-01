@@ -1,0 +1,27 @@
+.tag-input {
+  padding: 0;
+  height: 1.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.tag-input::placeholder {
+  font-size: 0.875rem;
+  color: aqua;
+}
+
+@media (max-width: 425px) {
+  .tag-input {
+    font-size: 0.75rem;
+    line-height: 2rem;
+    text-decoration: aqua;
+  }
+
+  .tag-input::placeholder {
+    font-size: 0.65rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

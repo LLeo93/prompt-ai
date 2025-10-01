@@ -7,6 +7,7 @@ import AnimatedComponent from '../../components/AnimatedComponent';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import Button from '../../components/Buttons/Button';
+import '../../styles/PromptForm.css';
 
 const MySwal = withReactContent(Swal);
 
@@ -94,11 +95,11 @@ const PromptForm: React.FC = () => {
           <label className="block text-gray-300 text-sm font-bold mb-2">
             Tags
           </label>
-          <div className="flex flex-wrap gap-2 p-2 bg-slate-700 rounded-lg border border-slate-600">
+          <div className="flex flex-wrap gap-2 p-2 bg-slate-700 rounded-lg border border-cyan-600 text-cyan-600">
             {tags.map((tag, i) => (
               <span
                 key={i}
-                className="flex items-center gap-1 px-2 py-1 text-sm bg-cyan-700/30 text-cyan-300 rounded-lg"
+                className="flex items-center gap-1 px-2 py-1 text-sm bg-cyan-700/30 text-cyan-600 rounded-lg"
               >
                 #{tag}
                 <button
@@ -116,7 +117,7 @@ const PromptForm: React.FC = () => {
               onChange={(e) => setTagInput(e.target.value)}
               onKeyDown={handleAddTag}
               placeholder="Aggiungi tag e premi Enter"
-              className="flex-grow px-2 bg-transparent text-white outline-none"
+              className="flex-grow px-2 bg-transparent text-white outline-none truncate tag-input"
             />
           </div>
         </div>
