@@ -275,7 +275,7 @@ const PromptList: React.FC = () => {
             {/* Sezione Altri Prompt */}
             {otherPrompts.length > 0 && (
               <div>
-                <h3 className="text-xl font-bold text-gray-300 mb-4">
+                <h3 className="text-xl font-bold text-cyan-300 mb-4">
                   Altri Prompt
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
