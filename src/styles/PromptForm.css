@@ -8,14 +8,14 @@
 
 .tag-input::placeholder {
   font-size: 0.875rem;
-  color: aqua;
+  color: #67e8f9;
 }
 
 @media (max-width: 425px) {
   .tag-input {
     font-size: 0.75rem;
     line-height: 2rem;
-    text-decoration: aqua;
+    text-decoration: #67e8f9;
   }
 
   .tag-input::placeholder {
