@@ -79,7 +79,7 @@ const faqs: FAQItem[] = [
     answer:
       'Sì, ma alcune funzionalità legate a OpenAI richiedono la connessione a internet.',
   },
-  // Nuove FAQ aggiunte
+
   {
     question: 'Come condivido un prompt?',
     answer: 'Copia il link o esporta il prompt in JSON e invialo.',
@@ -110,7 +110,7 @@ const AboutPage: React.FC = () => {
     <div className="relative overflow-hidden">
       <div className="relative z-10">
         <AnimatedComponent className="max-w-5xl mx-auto p-6 bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-lg border border-slate-700 mt-4 mb-15 space-y-12">
-          {/* Introduzione con SVG animato */}
+          {/*SVG*/}
           <motion.section
             className="p-4 rounded-xl bg-gradient-to-r from-cyan-900/20 via-purple-900/20 to-pink-900/20 hover:scale-[1.01] hover:shadow-cyan-500/20 hover:shadow-lg transition-all relative overflow-hidden"
             variants={sectionVariants}

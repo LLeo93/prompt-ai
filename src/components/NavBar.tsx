@@ -15,7 +15,7 @@ const NavBar: React.FC = () => {
 
   return (
     <>
-      {/* Desktop Top */}
+      {/* Desktop*/}
       <nav className="hidden lg:flex fixed top-0 left-0 w-full z-50 backdrop-blur-lg bg-slate-900/40 shadow-lg py-4">
         <div className="max-w-6xl mx-auto flex justify-between items-center px-6">
           <AnimatedComponent delay={0.1}>
@@ -23,7 +23,7 @@ const NavBar: React.FC = () => {
               to="/"
               className="text-3xl font-extrabold text-cyan-400 hover:text-cyan-300 transition-colors duration-300 flex items-center gap-2 flex-grow mr-15"
             >
-              {/* ✨ animata accanto al logo */}
+              {/* ✨  */}
               <motion.span
                 animate={{ scale: [1, 1.1, 1, 1.1, 1] }}
                 transition={{
@@ -113,7 +113,7 @@ const NavBar: React.FC = () => {
           })}
         </div>
 
-        {/* Icona ✨ animata in basso */}
+        {/*✨ in basso */}
         <motion.span
           className="text-yellow-400 text-3xl mb-4"
           animate={{ rotate: [0, 5, -5, 0], scale: [1, 1.1, 1, 1.1, 1] }}
@@ -146,8 +146,6 @@ const NavBar: React.FC = () => {
           );
         })}
       </nav>
-
-      {/* Spazio sotto navbar */}
       <div className="lg:mt-20 md:ml-28 mb-16 md:mb-0" />
     </>
   );
