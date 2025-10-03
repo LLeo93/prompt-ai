@@ -78,7 +78,7 @@ const FavoritePrompts: React.FC = () => {
       </div>
       <Tooltip text=" Torna alla Home">
         <Button
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/home')}
           variant="secondary"
           className="mt-8"
         >

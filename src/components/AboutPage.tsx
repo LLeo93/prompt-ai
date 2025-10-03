@@ -378,7 +378,7 @@ const AboutPage: React.FC = () => {
 
           {/* Pulsante Home */}
           <div className="flex justify-center items-center mt-8">
-            <Link to="/">
+            <Link to="/home">
               <Tooltip
                 text="Torna alla home"
                 position="top"

@@ -137,7 +137,7 @@ const PromptDetail: React.FC = () => {
           </Button>
         </Tooltip>
         <Tooltip text="Torna alla lista">
-          <Button onClick={() => navigate('/')} variant="secondary">
+          <Button onClick={() => navigate('/home')} variant="secondary">
             Indietro
           </Button>
         </Tooltip>

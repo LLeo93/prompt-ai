@@ -8,9 +8,9 @@ const NavBar: React.FC = () => {
   const location = useLocation();
 
   const links = [
-    { name: 'Home', path: '/', icon: <FaHome /> },
+    { name: 'Home', path: '/home', icon: <FaHome /> },
     { name: 'Preferiti', path: '/favorites', icon: <FaStar /> },
-    { name: 'Guida', path: '/about', icon: <FaInfoCircle /> },
+    { name: 'Guida', path: '/', icon: <FaInfoCircle /> },
   ];
 
   return (

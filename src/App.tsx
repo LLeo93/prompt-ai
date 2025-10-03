@@ -20,8 +20,9 @@ function App() {
         <AnimatedBackground />
         <NavBar />
         <Routes>
+          <Route path="/" element={<AboutPage />} />
           <Route
-            path="/"
+            path="/home"
             element={
               <AnimatedComponent className="max-w-4xl mx-auto p-6 bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-lg border border-slate-700">
                 <h1 className="text-4xl font-bold text-center text-cyan-400 mb-8">
@@ -37,7 +38,6 @@ function App() {
           <Route path="/prompt/:id" element={<PromptDetail />} />
           <Route path="/prompt/edit/:id" element={<PromptEditForm />} />
           <Route path="/favorites" element={<FavoritePrompts />} />
-          <Route path="/about" element={<AboutPage />} />
         </Routes>
       </div>
     </BrowserRouter>
