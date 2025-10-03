@@ -5,9 +5,10 @@ import type { HTMLMotionProps } from 'framer-motion';
 interface ButtonProps extends HTMLMotionProps<'button'> {
   children: React.ReactNode;
   variant?: 'primary' | 'secondary' | 'danger' | 'special' | 'view';
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | 'xs';
 }
 const sizeClasses = {
+  xs: 'w-8 h-8 p-1 text-sm',
   sm: 'w-24 h-8 px-3 py-1 text-sm',
   md: 'w-40 h-10 px-6 py-2 text-base',
   lg: 'w-56 h-12 px-8 py-3 text-lg',

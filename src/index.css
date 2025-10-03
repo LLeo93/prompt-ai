@@ -2,7 +2,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body {
-  background-color: #060818; /* Sfondo scuro per il body */
-  color: #e2e8f0; /* Testo di base di colore chiaro */
-}

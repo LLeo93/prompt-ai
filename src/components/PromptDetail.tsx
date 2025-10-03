@@ -11,6 +11,8 @@ import type { SweetAlertResult } from 'sweetalert2';
 import Tooltip from './Tooltip';
 import Button from './Buttons/Button';
 import CopyButton from './Buttons/CopyButton';
+import TagList from './TagList';
+import ExportSingleCardJson from './Buttons/ExportSingleCardJson';
 
 const MySwal = withReactContent(Swal);
 
@@ -88,18 +90,7 @@ const PromptDetail: React.FC = () => {
       </p>
 
       {/* Tags */}
-      {prompt.tags && prompt.tags.length > 0 && (
-        <div className="flex flex-wrap gap-2 mb-4">
-          {prompt.tags.map((tag, i) => (
-            <span
-              key={i}
-              className="px-2 py-1 text-sm bg-cyan-700/30 text-cyan-300 rounded-lg"
-            >
-              #{tag}
-            </span>
-          ))}
-        </div>
-      )}
+      <TagList tags={prompt.tags} size="sm" className="mb-4" />
 
       <div className="flex gap-2 items-center mb-4">
         <span className="text-sm text-gray-500">
@@ -120,6 +111,9 @@ const PromptDetail: React.FC = () => {
             {isFavorite ? <FaStar /> : <FaRegStar />}
           </button>
         </Tooltip>
+        <span className="ml-2">
+          <ExportSingleCardJson prompt={prompt} />
+        </span>
       </div>
 
       <div className="mt-8 flex justify-center items-center gap-2 flex-col md:flex-row">

@@ -1,0 +1,13 @@
+.favorite-card {
+  box-shadow: 0 0 15px rgba(250, 204, 21, 0.6);
+  animation: pulseGlow 3s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  from {
+    box-shadow: 0 0 10px rgba(250, 204, 21, 0.4);
+  }
+  to {
+    box-shadow: 0 0 25px rgba(250, 204, 21, 0.8);
+  }
+}

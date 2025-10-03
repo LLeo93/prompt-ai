@@ -1,0 +1,13 @@
+.max-tag-glow {
+  box-shadow: 0 0 6px rgba(255, 0, 0, 0.6);
+  animation: pulseRed 1.5s infinite alternate;
+}
+
+@keyframes pulseRed {
+  from {
+    box-shadow: 0 0 4px rgba(255, 0, 0, 0.4);
+  }
+  to {
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.7);
+  }
+}

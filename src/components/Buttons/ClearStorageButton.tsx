@@ -1,11 +1,10 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import Button from './Button';
 import { FaTrashAlt } from 'react-icons/fa';
 import Tooltip from '../Tooltip';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
-import { clearPrompts } from '../../features/prompts/promptsSlice';
+import { usePrompts } from '../../features/prompts/hooks/usePrompts';
 
 const MySwal = withReactContent(Swal);
 
@@ -18,7 +17,7 @@ const ClearStorageButton: React.FC<ClearStorageButtonProps> = ({
   tooltipText = 'Svuota tutto',
   className,
 }) => {
-  const dispatch = useDispatch();
+  const { clear } = usePrompts();
 
   const handleClearStorage = () => {
     MySwal.fire({
@@ -32,8 +31,7 @@ const ClearStorageButton: React.FC<ClearStorageButtonProps> = ({
       cancelButtonText: 'Annulla',
     }).then((result) => {
       if (result.isConfirmed) {
-        dispatch(clearPrompts());
-
+        clear();
         MySwal.fire({
           icon: 'success',
           title: 'Svuotato!',
