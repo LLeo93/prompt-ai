@@ -106,11 +106,6 @@ const AboutPage: React.FC = () => {
       faq.answer.toLowerCase().includes(searchQuery)
   );
 
-  const handleCopyLink = (link: string) => {
-    navigator.clipboard.writeText(link);
-    alert('Link copiato negli appunti!');
-  };
-
   return (
     <div className="relative overflow-hidden">
       <div className="relative z-10">
