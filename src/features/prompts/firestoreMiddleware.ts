@@ -8,7 +8,7 @@ import { auth } from '../../firebaseConfig';
 import type { Prompt } from '../../types';
 
 export const firestoreMiddleware: Middleware =
-  (storeAPI) => (next) => async (action: any) => {
+  (_storeAPI) => (next) => async (action: any) => {
     console.log(
       '[Middleware] Azione intercettata:',
       action.type,
