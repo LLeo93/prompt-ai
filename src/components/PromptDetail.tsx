@@ -66,7 +66,7 @@ const PromptDetail: React.FC = () => {
 
   if (!prompt) {
     return (
-      <AnimatedComponent className="text-center text-gray-400 mt-10">
+      <AnimatedComponent className="text-center text-gray-400 mt-10 ">
         <h2 className="text-2xl font-bold">Prompt non trovato.</h2>
         <Tooltip text="torna alla Home">
           <button

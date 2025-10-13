@@ -52,7 +52,7 @@ const PromptEditForm: React.FC = () => {
   };
 
   return (
-    <AnimatedComponent className="max-w-4xl mx-auto p-6 bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-lg border border-slate-700">
+    <AnimatedComponent className="mb-10 max-w-4xl mx-auto p-6 bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-lg border border-slate-700">
       <h1 className="text-4xl font-bold text-center text-cyan-400 mb-8">
         Modifica Prompt ✍️
       </h1>

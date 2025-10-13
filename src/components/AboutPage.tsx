@@ -214,7 +214,7 @@ const AboutPage: React.FC = () => {
 
           <Divider />
 
-          {/* FAQ Accordion */}
+          {/* FAQ  */}
           <motion.section className="p-4 rounded-xl bg-gradient-to-r from-cyan-900/20 via-purple-900/20 to-pink-900/20 hover:scale-[1.01] hover:shadow-lg transition-all">
             {/* Search Bar */}
             <div className="mb-4">
@@ -264,7 +264,7 @@ const AboutPage: React.FC = () => {
 
           <Divider />
 
-          {/* Link utili */}
+          {/* Link */}
           <motion.section className="p-4 rounded-xl bg-gradient-to-r from-pink-900/20 via-cyan-900/20 to-purple-900/20 hover:scale-[1.01] hover:shadow-pink-500/20 hover:shadow-lg transition-all">
             <motion.h2 className="text-xl md:text-2xl font-semibold text-cyan-300 mb-4">
               Link utili
@@ -376,7 +376,7 @@ const AboutPage: React.FC = () => {
 
           <Divider />
 
-          {/* Pulsante Home */}
+          {/*  Home */}
           <div className="flex justify-center items-center mt-8">
             <Link to="/home">
               <Tooltip

@@ -4,4 +4,10 @@ export interface Prompt {
   content: string;
   createdAt: string;
   tags?: string[];
+  history?: {
+    title: string;
+    content: string;
+    tags?: string[];
+    updatedAt: string;
+  }[];
 }

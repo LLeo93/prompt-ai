@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Prompt } from '../../types';
-import { defaultPrompts } from './defaultPrompts';
 
 interface PromptsState {
   prompts: Prompt[];
@@ -11,25 +10,17 @@ interface PromptsState {
 }
 
 const saveStateToStorage = (prompts: Prompt[], favorites: string[]) => {
+  const userIsLoggedIn = !!localStorage.getItem('userLoggedIn');
+  if (userIsLoggedIn) return;
   localStorage.setItem('prompts', JSON.stringify(prompts));
   localStorage.setItem('favorites', JSON.stringify(favorites));
-};
-
-const mergeWithDefaults = (storedPrompts: Prompt[]): Prompt[] => {
-  const mergedMap = new Map<string, Prompt>();
-  storedPrompts.forEach((p) => mergedMap.set(p.id, p));
-  defaultPrompts.forEach((p) => {
-    if (!mergedMap.has(p.id)) {
-      mergedMap.set(p.id, p);
-    }
-  });
-  return Array.from(mergedMap.values());
 };
 
 const loadState = (): PromptsState => {
   try {
     const serializedPrompts = localStorage.getItem('prompts');
     const serializedFavorites = localStorage.getItem('favorites');
+    const userIsLoggedIn = !!localStorage.getItem('userLoggedIn');
 
     const favorites = serializedFavorites
       ? JSON.parse(serializedFavorites)
@@ -38,20 +29,27 @@ const loadState = (): PromptsState => {
       ? JSON.parse(serializedPrompts)
       : [];
 
-    const prompts = mergeWithDefaults(storedPrompts);
+    if (!userIsLoggedIn && storedPrompts.length === 0) {
+      return {
+        prompts: [],
+        favorites: [],
+        filteredPrompts: [],
+        searchQuery: '',
+      };
+    }
 
     return {
-      prompts,
+      prompts: storedPrompts,
       favorites,
-      filteredPrompts: prompts,
+      filteredPrompts: storedPrompts,
       searchQuery: '',
     };
   } catch (error) {
-    console.error('Errore nel caricamento del local storage:', error);
+    console.error('Errore nel caricamento dello stato:', error);
     return {
-      prompts: defaultPrompts,
+      prompts: [],
       favorites: [],
-      filteredPrompts: defaultPrompts,
+      filteredPrompts: [],
       searchQuery: '',
     };
   }
@@ -107,7 +105,6 @@ export const promptsSlice = createSlice({
       localStorage.removeItem('prompts');
       localStorage.removeItem('favorites');
     },
-
     filterPrompts: (state, action: PayloadAction<string>) => {
       state.searchQuery = action.payload;
       const query = action.payload.toLowerCase();

@@ -7,6 +7,7 @@ import ClearStorageButton from '../../components/Buttons/ClearStorageButton';
 import '../../styles/CardsStar.css';
 import PromptCard from '../../components/PromptCard';
 import { usePrompts } from '../prompts/hooks/usePrompts';
+import ShowDefaultPromptsButton from '../../components/Buttons/ShowDefaultPromptsButton';
 
 const MySwal = withReactContent(Swal);
 
@@ -139,7 +140,9 @@ const PromptList: React.FC = () => {
             <option value="title">Ordina per Titolo</option>
           </select>
         </div>
+
         <ClearStorageButton />
+        <ShowDefaultPromptsButton />
       </div>
 
       <p className="text-gray-400 mb-4">

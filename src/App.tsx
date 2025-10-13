@@ -12,8 +12,10 @@ import PreferButton from './components/Buttons/PreferButton';
 import PromptBackup from './features/prompts/PromptBackup';
 import NavBar from './components/NavBar';
 import AboutPage from './components/AboutPage';
+import { useFirestoreSync } from './features/prompts/hooks/useFirestoreSync';
 
 function App() {
+  useFirestoreSync();
   return (
     <BrowserRouter>
       <div className="p-4 relative z-10 lg:p-0  md:pl-32 lg:pt-20 md:pb-0">

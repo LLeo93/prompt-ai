@@ -91,7 +91,7 @@ const TagInput: React.FC<TagInputProps> = ({ tags, setTags, maxTags = 5 }) => {
         {tags.length}/{maxTags} tag usati
       </p>
 
-      {/* Messaggio temporaneo */}
+      {/* Errore */}
       {errorMsg && (
         <div className="mt-1 text-xs text-red-400 transition-opacity duration-500">
           {errorMsg}

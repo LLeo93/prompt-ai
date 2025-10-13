@@ -47,7 +47,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({
         onClick={handleCopy}
         variant="secondary"
         className={className}
-        size="md"
+        size="xs"
       >
         <FaClipboard />
       </Button>

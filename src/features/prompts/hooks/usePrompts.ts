@@ -18,7 +18,11 @@ export const usePrompts = () => {
 
   const add = (prompt: Prompt) => dispatch(addPrompt(prompt));
   const update = (prompt: Prompt) => dispatch(updatePrompt(prompt));
-  const remove = (id: string) => dispatch(removePrompt(id));
+  const remove = (id: string) =>
+    dispatch(
+      removePrompt(id),
+      console.log('[usePrompts] Sto rimuovendo prompt con ID:', id)
+    );
   const toggleFav = (id: string) => dispatch(toggleFavorite(id));
   const load = (promptsArray: Prompt[]) => dispatch(loadPrompts(promptsArray));
   const clear = () => dispatch(clearPrompts());

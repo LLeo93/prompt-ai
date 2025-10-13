@@ -4,7 +4,7 @@ import type { HTMLMotionProps } from 'framer-motion';
 
 interface ButtonProps extends HTMLMotionProps<'button'> {
   children: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'danger' | 'special' | 'view';
+  variant?: 'primary' | 'secondary' | 'danger' | 'special' | 'view' | 'auth';
   size?: 'sm' | 'md' | 'lg' | 'xs';
 }
 const sizeClasses = {
@@ -45,6 +45,11 @@ const Button: React.FC<ButtonProps> = ({
   } else if (variant === 'view') {
     bgClasses = 'bg-cyan-700 hover:bg-cyan-500';
     borderClasses = 'border border-cyan-700';
+    textClasses = 'text-white';
+  } else if (variant === 'auth') {
+    bgClasses =
+      'bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-500 hover:to-blue-500';
+    borderClasses = 'border border-violet-500';
     textClasses = 'text-white';
   }
 

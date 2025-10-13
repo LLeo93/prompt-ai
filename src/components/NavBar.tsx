@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { FaHome, FaStar, FaInfoCircle } from 'react-icons/fa';
 import AnimatedComponent from './AnimatedComponent';
 import { motion } from 'framer-motion';
+import { AuthButton } from './Buttons/AuthButton';
 
 const NavBar: React.FC = () => {
   const location = useLocation();
@@ -16,7 +17,7 @@ const NavBar: React.FC = () => {
   return (
     <>
       {/* Desktop*/}
-      <nav className="hidden lg:flex fixed top-0 left-0 w-full z-50 backdrop-blur-lg bg-slate-900/40 shadow-lg py-4">
+      <nav className="hidden lg:flex fixed top-0 left-0 w-full z-[9999] backdrop-blur-lg bg-slate-900/40 shadow-lg py-4">
         <div className="max-w-6xl mx-auto flex justify-between items-center px-6">
           <AnimatedComponent delay={0.1}>
             <Link
@@ -60,7 +61,7 @@ const NavBar: React.FC = () => {
                 </Link>
               );
             })}
-
+            <AuthButton />
             {/* Icona  animata Desktop */}
             <motion.span
               className="text-yellow-400 text-2xl ml-4"
@@ -73,8 +74,8 @@ const NavBar: React.FC = () => {
         </div>
       </nav>
 
-      {/* Tablet Vertical */}
-      <nav className="hidden md:flex lg:hidden fixed top-0 left-0 h-full w-28 bg-slate-900/40 shadow-inner flex flex-col items-center py-6 gap-12 backdrop-blur-lg">
+      {/* Tablet Verticale */}
+      <nav className=" z-[9999] hidden md:flex lg:hidden fixed top-0 left-0 h-full w-28 bg-slate-900/40 shadow-inner flex flex-col items-center py-6 gap-12 backdrop-blur-lg">
         {/* Logo  */}
         <div className="flex flex-col items-center mb-4">
           <motion.span
@@ -111,6 +112,7 @@ const NavBar: React.FC = () => {
               </Link>
             );
           })}
+          <AuthButton />
         </div>
 
         {/*✨ in basso */}
@@ -145,6 +147,7 @@ const NavBar: React.FC = () => {
             </Link>
           );
         })}
+        <AuthButton />
       </nav>
       <div className="lg:mt-20 md:ml-28 mb-16 md:mb-0" />
     </>

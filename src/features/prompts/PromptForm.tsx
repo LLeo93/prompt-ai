@@ -45,7 +45,7 @@ const PromptForm: React.FC = () => {
       icon: 'success',
       title: 'Prompt Aggiunto!',
       text: 'Il tuo nuovo prompt è stato salvato con successo.',
-      timer: 2000,
+      timer: 1800,
       showConfirmButton: false,
     });
   };

@@ -5,6 +5,8 @@ import Tooltip from '../Tooltip';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import { usePrompts } from '../../features/prompts/hooks/usePrompts';
+import { useAuth } from '../../context/AuthContext';
+import { deleteAllUserPrompts } from '../../services/firestoreService';
 
 const MySwal = withReactContent(Swal);
 
@@ -18,9 +20,10 @@ const ClearStorageButton: React.FC<ClearStorageButtonProps> = ({
   className,
 }) => {
   const { clear } = usePrompts();
+  const { user } = useAuth();
 
-  const handleClearStorage = () => {
-    MySwal.fire({
+  const handleClearStorage = async () => {
+    const result = await MySwal.fire({
       title: 'Sei sicuro?',
       text: 'Questa azione cancellerà TUTTI i prompt, inclusi quelli di default, e i preferiti. Non potrai più tornare indietro!',
       icon: 'warning',
@@ -29,18 +32,38 @@ const ClearStorageButton: React.FC<ClearStorageButtonProps> = ({
       cancelButtonColor: '#475569',
       confirmButtonText: 'Sì, svuota tutto!',
       cancelButtonText: 'Annulla',
-    }).then((result) => {
-      if (result.isConfirmed) {
-        clear();
-        MySwal.fire({
-          icon: 'success',
-          title: 'Svuotato!',
-          text: 'Tutti i dati sono stati cancellati.',
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      }
     });
+
+    if (!result.isConfirmed) return;
+
+    try {
+      // Se l’utente è loggato, elimina prima su Firestore
+      if (user?.uid) {
+        await deleteAllUserPrompts(user.uid);
+        console.log(`[Firestore] 🗑️ Tutti i prompt di ${user.uid} eliminati.`);
+      }
+
+      // svuota Redux e localStorage
+      clear();
+
+      //cancella eventuale backup
+      localStorage.removeItem('backup_prompts');
+
+      MySwal.fire({
+        icon: 'success',
+        title: 'Svuotato!',
+        text: 'Tutti i dati sono stati cancellati.',
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } catch (err) {
+      console.error('❌ Errore nello svuotamento:', err);
+      MySwal.fire({
+        icon: 'error',
+        title: 'Errore!',
+        text: 'Si è verificato un problema durante la cancellazione.',
+      });
+    }
   };
 
   return (

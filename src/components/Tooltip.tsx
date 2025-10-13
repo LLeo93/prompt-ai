@@ -9,7 +9,7 @@ interface TooltipProps {
   icon?: string;
 }
 
-// Config stili centralizzata
+// Config stili
 const variantClasses = {
   default: 'bg-gray-700 text-white',
   glow: 'bg-gray-800 text-cyan-300 shadow-lg shadow-cyan-500/50',
