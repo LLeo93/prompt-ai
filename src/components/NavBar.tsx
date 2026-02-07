@@ -117,7 +117,7 @@ const NavBar: React.FC = () => {
 
         {/*✨ in basso */}
         <motion.span
-          className="text-yellow-400 text-3xl mb-4"
+          className="text-yellow-400 text-3xl mb-4 "
           animate={{ rotate: [0, 5, -5, 0], scale: [1, 1.1, 1, 1.1, 1] }}
           transition={{ repeat: Infinity, duration: 25, ease: 'easeInOut' }}
         >

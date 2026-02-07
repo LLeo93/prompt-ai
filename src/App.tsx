@@ -18,7 +18,7 @@ function App() {
   useFirestoreSync();
   return (
     <BrowserRouter>
-      <div className="p-4 relative z-10 lg:p-0  md:pl-32 lg:pt-20 md:pb-0">
+      <div className="p-4 relative z-10 lg:p-0  md:pl-32 lg:pt-20 md:pb-0 pb-14">
         <AnimatedBackground />
         <NavBar />
         <Routes>
@@ -26,7 +26,7 @@ function App() {
           <Route
             path="/home"
             element={
-              <AnimatedComponent className="max-w-4xl mx-auto p-6 bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-lg border border-slate-700">
+              <AnimatedComponent className="max-w-4xl mx-auto p-6  bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-lg border border-slate-700">
                 <h1 className="text-4xl font-bold text-center text-cyan-400 mb-8">
                   Gestore di Prompt per IA 🤖
                 </h1>
